@@ -2,12 +2,17 @@
 package Taller1;
 
 import java.util.Scanner;
-
+/**
+ * Clase que sirve para definir una nave no tripulada.
+   Hereda de la clase Nave.
+ * @author edwin
+ */
 public class NaveNoTripulada extends Nave implements Taller{
-    public int pesoCarga;
     
-    
-
+    public int pesoCarga;      
+    /**
+     * Peso total de la carga que lleva la nave
+     */
     public NaveNoTripulada() {
         this.tanquear();
         this.peso = 1000;
@@ -16,13 +21,16 @@ public class NaveNoTripulada extends Nave implements Taller{
         this.viaje();
         this.mantenimiento();
     }
-    
+    /**
+     * Sobreescritura de la funcion abstracta acelerar
+     */  
     @Override
     public void acelerar() {
         this.velocidadPromedio = 1600;
-    }
-    
-    
+    }    
+    /**
+     * Sobreescritura de la funcion abstracta carga
+     */ 
     @Override
     public void carga() {
         Scanner input = new Scanner(System.in);
@@ -31,12 +39,17 @@ public class NaveNoTripulada extends Nave implements Taller{
         System.out.println("Distancia del viaje (km)");
         distancia=input.nextInt();
     }
+    /**
+     * Aplicacion de la funcion tanquear perteneciente a la interface taller
+     */
     @Override
     public void tanquear() {
         tanqueFull = true;
         System.out.println("La nave posee el suficiente combustible para emprender el viaje");
     }
-
+    /**
+     * Aplicacion de la funcion mantenimiento perteneciente a la interface taller
+     */
     @Override
     public void mantenimiento() {
         this.mantenimiento = true;

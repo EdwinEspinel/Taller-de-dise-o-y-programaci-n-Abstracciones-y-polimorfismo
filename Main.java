@@ -3,10 +3,19 @@ package Taller1;
 
 import java.io.IOException;
 import java.util.Scanner;
-
+/**
+ * Metodo main del sistema
+ * @author edwin
+ */
 public class Main {
+    /**
+     * variable que sirve para el funcionamiento del switch
+     */
     private static boolean bandera=true;
     private static int opcion;
+    /**
+     * Metodo que llama a todas las funciones dentro de la clase main
+     */
     public static void main(String[] args) throws IOException{
         do {
             limpiarPantalla();
@@ -15,6 +24,9 @@ public class Main {
             bandera = evaluarOpcion(opcion);
         } while (bandera == true);
     }
+    /**
+     * Menu del sistema
+     */
     private static void menu() {
         System.out.println("Escoja un punto del taller");
         System.out.println("1. Usar un vehiculo lanzadera");
@@ -24,10 +36,20 @@ public class Main {
         System.out.println("0. Salir del taller");
         
     }
+    /**
+     * Funcion que permite capturar la opcion que seleciono el usuario
+     * @return un entero
+     */
     private static int capturarOpcion() {
         Scanner input = new Scanner(System.in);
         return input.nextInt();
     }
+    /**
+     * 
+     * @param opcion
+     * @return un valor voleano que permite determinar si se ejecuta de nuevo
+               el menu
+     */
     private static boolean evaluarOpcion(int opcion) throws IOException {
         switch (opcion) {
             case 1:
@@ -50,6 +72,9 @@ public class Main {
         }
         return true;
     }
+    /**
+     * Permite limpiar la pantalla
+     */
     private static void limpiarPantalla() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
